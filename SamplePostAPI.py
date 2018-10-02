@@ -1,11 +1,8 @@
 import requests,json,time
 print "***********************started**************************",str(time.asctime())
-#{msp_code=msp_2802, number=T20180725.0001, id=20634}
-resHed = {'content-type': "application/vnd.github.v3+json",'Authorization':"token d8ec1c3273d73fde38d755fdcf24e781dd1066b9"}
-body={"message": "my test commit message from postman","committer": {"name": "ch7hills","email": "ch.7hills@gmail.com"},"content": "bXkgdXBkYXRlZCBmaWxlIGNvbnRlbnRz","sha": "329688480d39049927147c162b9d2deaf885005f"}
+resHed = {'content-type': "application/vnd.github.v3+json",'Authorization':"token 6e678986a71a29a2b7be82ce963345eb9d6cdec4"}
+body={"message": "my test commit message from postman","committer": {"name": "7hills","email": "ch.7hills@gmail.com"},"content": "aW1wb3J0IHJlcXVlc3RzLGpzb24sdGltZQ0KcHJpbnQgIioqKioqKioqKioqKioqKioqKioqKioqc3RhcnRlZCoqKioqKioqKioqKioqKioqKioqKioqKioqIixzdHIodGltZS5hc2N0aW1lKCkpDQoje21zcF9jb2RlPW1zcF8yODAyLCBudW1iZXI9VDIwMTgwNzI1LjAwMDEsIGlkPTIwNjM0fQ0KcmVzSGVkID0geydjb250ZW50LXR5cGUnOiAiYXBwbGljYXRpb24vdm5kLmdpdGh1Yi52Mytqc29uIiwnQXV0aG9yaXphdGlvbic6InRva2VuIGQ4ZWMxYzMyNzNkNzNmZGUzOGQ3NTVmZGNmMjRlNzgxZGQxMDY2YjkifQ0KYm9keT17Im1lc3NhZ2UiOiAibXkgdGVzdCBjb21taXQgbWVzc2FnZSBmcm9tIHBvc3RtYW4iLCJjb21taXR0ZXIiOiB7Im5hbWUiOiAiY2g3aGlsbHMiLCJlbWFpbCI6ICJjaC43aGlsbHNAZ21haWwuY29tIn0sImNvbnRlbnQiOiAiYlhrZ2RYQmtZWFJsWkNCbWFXeGxJR052Ym5SbGJuUnoiLCJzaGEiOiAiMzI5Njg4NDgwZDM5MDQ5OTI3MTQ3YzE2MmI5ZDJkZWFmODg1MDA1ZiJ9DQpmb3IgaSBpbiB4cmFuZ2UoMSk6DQoJI3VybCA9ICJodHRwczovL3N0Zy5uZXRlbnJpY2hnby5jb20vaW5jaWRlbnQvY29ubmVjdHdpc2UvY2FsbGJhY2s/bXNwX2NvZGU9bXNwXzU3MDgyMyZpZD02MDAxJm51bWJlcj02MDAxIg0KCXVybCA9Imh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vcmVwb3MvY2g3aGlsbHMvZG9zYS9jb250ZW50cy9TYW1wbGVQb3N0QVBJLnB5Ig0KCSN1cmwgPSAiaHR0cDovL2xvY2FsaG9zdDo4NTA1L2luY2lkZW50L2Nvbm5lY3R3aXNlL2NhbGxiYWNrP21zcF9jb2RlPW1zcF81NzA4MjMmaWQ9NTM2MiIrc3RyKGkpKyImbnVtYmVyPTUzNjIiK3N0cihpKQ0KCXJlc3VsdD1yZXF1ZXN0cy5nZXQodXJsLCBoZWFkZXJzPXJlc0hlZCwgZGF0YT17fSwgdmVyaWZ5ID0gVHJ1ZSkNCglwcmludCByZXN1bHQsIlJFU1VMVC0tLT4tLS0+IixyZXN1bHQuY29udGVudA0K","sha": "ccbf34242159d859f8fb322edbd3dc683705f07b"}
 for i in xrange(1):
-	#url = "https://stg.netenrichgo.com/incident/connectwise/callback?msp_code=msp_570823&id=6001&number=6001"
 	url ="https://api.github.com/repos/ch7hills/dosa/contents/SamplePostAPI.py"
-	#url = "http://localhost:8505/incident/connectwise/callback?msp_code=msp_570823&id=5362"+str(i)+"&number=5362"+str(i)
-	result=requests.get(url, headers=resHed, data={}, verify = True)
+	result=requests.get(url, headers=resHed, data=body, verify = True)
 	print result,"RESULT--->--->",result.content
